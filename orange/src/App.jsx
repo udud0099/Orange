@@ -1,16 +1,20 @@
-// import "./App.css";
-import "./assets/css/style.css";
-import About from "./components/About";
-import Home from "./components/Home";
-import Navbar from "./components/Navbar";
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./pages/Home/Home";
+import Cart from "./pages/Cart/Cart";
+import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 
 function App() {
   return (
     <>
-      <h1>App page</h1>
-      <Navbar />
-      <Home />
-      <About />
+      <div className="app">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/order" element={<PlaceOrder />} />
+        </Routes>
+      </div>
     </>
   );
 }
